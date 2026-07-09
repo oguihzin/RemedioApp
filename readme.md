@@ -12,17 +12,20 @@ Projeto pessoal criado para resolver um problema simples: lembrar se já tomei o
 
 - [x] Setup do projeto (JavaFX + Maven)
 - [x] Modelagem das entidades `Remedio` e `RegistroTomada`
-- [x] Estrutura de conexão com banco de dados (SQLite)
-- [ ] Criação e inicialização das tabelas
-- [ ] CRUD de remédios
-- [ ] Tela de acompanhamento diário (marcar tomado/não tomado)
-- [ ] Histórico de tomadas
+- [x] Banco de dados SQLite (criação de tabelas, conexão)
+- [x] CRUD de remédios (cadastrar, listar, remover)
+- [x] Geração automática dos registros do dia (um por remédio/horário)
+- [x] Tela "Hoje" com checkbox para marcar remédio como tomado (com horário real registrado)
+- [x] Validações de formulário e mensagens de erro na interface
+- [x] Proteção contra remoção de remédio com registros do dia
+- [x] Interface com abas (Hoje / Meus Remédios) e estilização CSS própria
+- [ ] Histórico de dias anteriores
 - [ ] Lembretes automáticos via WhatsApp (CallMeBot)
 
 ## 🛠️ Tecnologias
 
 - **Java 21**
-- **JavaFX** — interface gráfica
+- **JavaFX** — interface gráfica, com estilização própria via CSS
 - **Maven** — gerenciamento de dependências e build
 - **SQLite** (via driver `sqlite-jdbc`) — persistência local em arquivo único, sem necessidade de servidor
 - **CallMeBot API** (planejado) — envio de lembretes via WhatsApp
@@ -34,6 +37,15 @@ Projeto pessoal criado para resolver um problema simples: lembrar se já tomei o
 
 **RegistroTomada**
 - id, remédio associado, data, horário previsto, se foi tomado, horário real da marcação
+
+## 🏗️ Arquitetura
+
+- `Remedio` / `RegistroTomada` — modelos de dados
+- `DatabaseHelper` — conexão e criação das tabelas no SQLite
+- `RemedioRepository` / `RegistroTomadaRepository` — acesso ao banco (CRUD)
+- `RegistroService` — regra de negócio que gera os registros do dia automaticamente
+- `RemedioController` / `HojeController` — controllers das telas (FXML)
+- `main-view.fxml` — tela principal com abas, incluindo `remedio-view.fxml` e `hoje-view.fxml`
 
 ## ▶️ Como rodar
 
@@ -47,9 +59,8 @@ mvn clean javafx:run
 
 ## 📌 Roadmap
 
-- Finalizar persistência (SQLite)
-- Interface para cadastro e acompanhamento diário
-- Notificações automáticas via WhatsApp quando chegar o horário do remédio
+- Histórico de dias anteriores (visualizar tomadas passadas)
+- Notificações automáticas via WhatsApp quando chegar o horário do remédio (CallMeBot)
 
 ## 📄 Licença
 

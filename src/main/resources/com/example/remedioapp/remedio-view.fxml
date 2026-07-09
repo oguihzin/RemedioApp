@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.remedioapp.RemedioController">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <Label text="Meus Remédios" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <ListView fx:id="listaRemedios" prefHeight="200"/>
+
+    <Button text="Remover selecionado" onAction="#removerRemedio"/>
+
+    <Label text="Cadastrar novo remédio:"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="campoNome" promptText="Nome"/>
+        <TextField fx:id="campoDosagem" promptText="Dosagem"/>
+        <TextField fx:id="campoHorario" promptText="Horário (ex: 08:00)"/>
+        <Button text="Adicionar" onAction="#adicionarRemedio" minWidth="90"/>
+    </HBox>
+
+    <Label fx:id="labelFeedback" style="-fx-text-fill: red;"/>
+</VBox>

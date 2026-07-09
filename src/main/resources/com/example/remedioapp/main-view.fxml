@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+         tabClosingPolicy="UNAVAILABLE">
+    <Tab text="Hoje">
+        <fx:include source="hoje-view.fxml"/>
+    </Tab>
+    <Tab text="Meus Remédios">
+        <fx:include source="remedio-view.fxml"/>
+    </Tab>
+</TabPane>

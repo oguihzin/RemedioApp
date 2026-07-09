@@ -7,6 +7,10 @@ public class Remedio {
     private String nome;
     private String dosagem;
     private List<String> horarios;
+    @Override
+    public String toString() {
+    return nome + " - " + dosagem + " - " + horarios;
+}
 
     public Remedio(int id, String nome, String dosagem, List<String> horarios){
         this.id = id;

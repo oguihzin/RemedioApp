@@ -1,0 +1,60 @@
+.root {
+    -fx-background-color: #F2F6F0;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.label {
+    -fx-text-fill: #253916;
+}
+
+.button {
+    -fx-background-color: #65D067;
+    -fx-text-fill: #253916;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #C9EA63;
+}
+
+.text-field {
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+    -fx-border-color: #C9EA63;
+    -fx-border-radius: 6;
+    -fx-background-color: white;
+}
+
+.list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #C9EA63;
+    -fx-border-radius: 8;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #C9EA63;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #E4EEDD;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #F2F6F0;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #253916;
+}
+
+.check-box .box {
+    -fx-border-color: #65D067;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #253916;
+}
